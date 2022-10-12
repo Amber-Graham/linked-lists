@@ -1,7 +1,8 @@
 class LinkedList
-  def initialize(data)
-    @head = head
-    @tail = tail
+  attr_accessor :head
+
+  def initialize
+    @head = nil
   end
 
   def append(value)
@@ -48,7 +49,7 @@ class LinkedList
   #extra credit
   #tip: when inserting or removing a node, think about how it will affect the existing nodes
     #some of the nodes will need their #next_node link updated
-    
+
   def insert_at(value, index)
     #inserts a new node with the provdied value at the given index
   end
@@ -59,11 +60,11 @@ class LinkedList
 end
 
 class Node
-  def initialize
-    @next = nil
-    @node = node #not sure but we will see
-  end
-
-  def value
+  attr_reader :value
+  attr_accessor :next_node
+  
+  def initialize(value = nil, next_node = nil)
+    @value = value
+    @next_node = next_node
   end
 end
